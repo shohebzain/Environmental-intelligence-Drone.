@@ -1,0 +1,611 @@
+# 🚁 Environmental Intelligence Drone (EID)
+
+<div align="center">
+
+<img src="Block-Diagram.png" alt="Environmental Intelligence Drone" width="850"/>
+
+# 🌍 Environmental Intelligence Drone
+
+### **Sense. Locate. Map. Predict. Warn.**
+
+**An AI-powered autonomous environmental monitoring platform for real-time pollution monitoring, spatial mapping, prediction, and early-warning intelligence.**
+
+<br>
+
+![Project Status](https://img.shields.io/badge/Project-Prototype-yellow?style=for-the-badge)
+![AI](https://img.shields.io/badge/AI-Prediction-7B61FF?style=for-the-badge)
+![IoT](https://img.shields.io/badge/IoT-ESP32-00979D?style=for-the-badge)
+![Drone](https://img.shields.io/badge/Platform-Autonomous%20Drone-00A86B?style=for-the-badge)
+![LoRa](https://img.shields.io/badge/Communication-LoRa-orange?style=for-the-badge)
+![GPS](https://img.shields.io/badge/Navigation-GPS-blue?style=for-the-badge)
+
+</div>
+
+---
+
+## 🌱 About the Project
+
+The **Environmental Intelligence Drone (EID)** is a low-cost, modular environmental monitoring platform designed to collect environmental data from **landfill sites, industrial zones, and densely populated areas**.
+
+Traditional environmental monitoring systems often depend on fixed monitoring stations. While these stations provide valuable measurements, they may not capture how environmental conditions change across a wider geographical area.
+
+EID addresses this challenge by combining:
+
+- 🚁 Drone-based mobile monitoring
+- 🧠 ESP32-based data acquisition
+- 🌡️ Environmental sensors
+- 📍 GPS-based location tracking
+- 📡 LoRa long-range communication
+- 🗺️ Real-time pollution mapping
+- 🤖 AI-based prediction
+- ⚠️ Risk analysis
+- 🔔 Early-warning alerts
+- 🌐 Web-based environmental intelligence
+
+---
+
+# 🎯 Problem Statement
+
+Environmental pollution is not static.
+
+Pollutant concentration can vary depending on:
+
+- 📍 Location
+- 🌬️ Wind conditions
+- 🌡️ Temperature
+- 💧 Humidity
+- ⏱️ Time
+- 🏭 Industrial activity
+- 🗑️ Landfill conditions
+
+Fixed monitoring stations provide measurements at specific points, but they may have limited ability to understand the **spatial movement and changing patterns of pollution**.
+
+### The question we want to answer is:
+
+> **Where is the pollution, how is it changing, and where could the risk move next?**
+
+---
+
+# 💡 Our Solution
+
+The Environmental Intelligence Drone provides a mobile environmental sensing platform.
+
+The drone collects environmental measurements while moving through a predefined monitoring area.
+
+Each measurement is associated with:
+
+📍 **Location**
+
+⏱️ **Time**
+
+🌡️ **Environmental conditions**
+
+📊 **Sensor readings**
+
+The data is transmitted to a ground station and can then be processed by our web platform.
+
+### Complete Flow
+
+```text
+🌍 TARGET AREA
+       ↓
+🗺️ MISSION PLANNING
+       ↓
+📍 GPS WAYPOINTS
+       ↓
+🚁 DRONE FLIGHT
+       ↓
+📡 ENVIRONMENTAL SENSING
+       ↓
+🧠 ESP32
+       ↓
+📍 GPS + TIMESTAMP
+       ↓
+📡 LoRa TRANSMISSION
+       ↓
+🖥️ GROUND STATION
+       ↓
+🌐 WEB PLATFORM
+       ↓
+🗺️ POLLUTION MAPPING
+       ↓
+🤖 AI PREDICTION
+       ↓
+⚠️ RISK ANALYSIS
+       ↓
+🔔 EARLY WARNING
+
+🚁 Prototype
+
+The prototype integrates environmental sensors with an ESP32-based embedded system mounted on a drone platform.
+
+Sensor System
+Component	Purpose
+🧠 ESP32	Data acquisition and processing
+🟢 MQ-4	Methane/gas sensing
+🔵 MQ-135	Air-quality-related sensing
+🌡️ DHT22	Temperature & humidity
+🌤️ BMP280	Atmospheric pressure
+📍 GPS	Location & timestamp
+📡 LoRa	Long-range telemetry
+🌬️ Wind Sensor	Wind speed & direction
+🧠 How EID Works
+1️⃣ Sense
+
+Environmental sensors collect readings from the surrounding area.
+
+2️⃣ Locate
+
+GPS associates each measurement with its geographical location.
+
+3️⃣ Process
+
+The ESP32 collects and packages the sensor data.
+
+4️⃣ Transmit
+
+LoRa sends the telemetry to the ground station.
+
+5️⃣ Map
+
+The web platform converts GPS-tagged measurements into a spatial environmental map.
+
+6️⃣ Predict
+
+The AI layer analyzes historical and environmental data to estimate potential pollution trends.
+
+7️⃣ Warn
+
+The system generates alerts when configured risk conditions are detected.
+
+🗺️ Environmental Intelligence Platform
+
+The web platform is designed to provide a centralized environmental monitoring interface.
+
+Dashboard
+
+The dashboard can provide:
+
+🌡️ Live environmental readings
+🚁 Drone status
+📍 GPS location
+📡 Communication status
+🗺️ Pollution map
+📊 Historical analytics
+🤖 AI predictions
+⚠️ Risk levels
+🔔 Early-warning alerts
+🗺️ Pollution Mapping
+
+One of the key features of EID is the ability to visualize measurements geographically.
+
+The system can display:
+
+🟢 Normal
+🟡 Moderate
+🟠 High
+🔴 Critical
+
+The map can contain:
+
+Drone location
+Flight path
+Environmental measurement points
+Pollution hotspots
+Monitoring boundaries
+Predicted risk areas
+Measured vs Predicted
+
+The platform clearly distinguishes between:
+
+● Measured Data
+
+Data received from sensors.
+
+◌ AI Predicted Data
+
+Estimated values or risk generated by the prediction model.
+
+🤖 AI Prediction
+
+The AI layer is designed to analyze environmental measurements and estimate potential pollution-risk trends.
+
+Potential Input Features
+Methane
+Air Quality
+Temperature
+Humidity
+Atmospheric Pressure
+Wind Speed
+Wind Direction
+Latitude
+Longitude
+Timestamp
+Historical Measurements
+Prediction Pipeline
+Environmental Data
+        ↓
+Data Cleaning
+        ↓
+Feature Engineering
+        ↓
+AI Model
+        ↓
+Prediction
+        ↓
+Risk Analysis
+        ↓
+Early Warning
+
+Potential models include:
+
+Random Forest
+XGBoost
+LSTM
+GRU
+
+⚠️ AI predictions should be treated as estimates and should not be represented as guaranteed future pollution conditions.
+
+📡 IoT & Communication
+
+The ESP32 acts as the environmental data-acquisition controller.
+
+Data Flow
+Sensors
+   ↓
+ESP32
+   ↓
+GPS Tagging
+   ↓
+Telemetry Packet
+   ↓
+LoRa
+   ↓
+Ground Station
+   ↓
+Backend
+   ↓
+Dashboard
+
+LoRa is used because environmental telemetry generally consists of relatively small data packets where long-range, low-power communication can be useful.
+
+🔌 Hardware Architecture
+                   🚁 DRONE
+                      │
+       ┌──────────────┼──────────────┐
+       │              │              │
+      MQ-4          MQ-135         DHT22
+       │              │              │
+       └──────────────┼──────────────┘
+                      │
+                    BMP280
+                      │
+                      ↓
+                  🧠 ESP32
+                      │
+                 ┌────┴────┐
+                 │         │
+                GPS       LoRa
+                 │         │
+                 └────┬────┘
+                      ↓
+               🖥️ GROUND STATION
+🏗️ Repository Structure
+Environmental-intelligence-Drone/
+│
+├── 📁 Drone website/
+│   └── 🌐 Environmental monitoring web platform
+│
+├── 📁 Drone2 website/
+│   └── 🌐 Alternative / updated web interface
+│
+├── 📁 Hardware/
+│   └── 🔌 Hardware documentation and implementation
+│
+├── 🖼️ Block-Diagram.png
+│
+├── 📄 EID_Project_Charter final.docx
+│
+├── 📊 Environmental Intelligence Drone (EID).pptx
+│
+├── 📑 Product requirement document.pdf
+│
+└── 📖 README.md
+📂 Project Resources
+🌐 Drone Website
+
+Explore the environmental monitoring dashboard:
+
+👉 Open Drone Website
+
+🌐 Drone Website 2
+
+Explore the second website implementation:
+
+👉 Open Drone2 Website
+
+🔌 Hardware
+
+View the hardware implementation and documentation:
+
+👉 Explore Hardware
+
+🗺️ System Block Diagram
+
+View the complete system architecture:
+
+👉 View Block Diagram
+
+📑 Product Requirement Document
+
+Read the complete product requirements:
+
+👉 View PRD
+
+📊 Project Presentation
+
+View the project presentation:
+
+👉 View Presentation
+
+📋 Project Charter
+
+View the complete project charter:
+
+👉 View Project Charter
+
+🌍 Target Applications
+
+The Environmental Intelligence Drone can be applied to:
+
+🗑️ Landfill Monitoring
+
+Monitor environmental conditions around landfill sites and identify areas requiring further investigation.
+
+🏭 Industrial Zones
+
+Provide mobile environmental measurements around industrial facilities.
+
+🏙️ Smart Cities
+
+Support spatial environmental monitoring and data-driven decision making.
+
+🌱 Environmental Research
+
+Collect geographically distributed environmental data for research and analysis.
+
+🚨 Emergency Environmental Assessment
+
+Support rapid environmental assessment in areas where fixed monitoring infrastructure may not provide sufficient spatial coverage.
+
+👥 Who Can Use It?
+
+The platform is designed for:
+
+🏛️ Municipal authorities
+🌿 Pollution-control organizations
+🏭 Industrial facilities
+🗑️ Landfill operators
+🏙️ Smart-city administrators
+🔬 Environmental researchers
+🎓 Educational institutions
+🚨 Disaster-management teams
+🌱 Social Impact
+
+If implemented at scale, EID could support society by helping organizations:
+
+1. 🔎 Detect Environmental Changes Earlier
+
+Mobile sensing can help identify abnormal conditions across different locations.
+
+2. 🗺️ Understand Pollution Spatially
+
+Instead of only knowing what is happening at one fixed location, authorities can visualize environmental variation across an area.
+
+3. ⚠️ Support Early Warning
+
+Risk-based alerts can help monitoring teams investigate potentially unsafe conditions sooner.
+
+4. 📊 Improve Decision Making
+
+Historical and spatial data can support data-driven environmental management.
+
+5. 🌍 Support Sustainable Smart Cities
+
+The system can become part of a broader environmental intelligence infrastructure.
+
+🧪 Prototype Validation
+
+The project can be validated through several stages.
+
+Sensor Validation
+
+Compare sensor readings under controlled conditions.
+
+GPS Validation
+
+Test:
+
+GPS fix time
+Coordinate stability
+Location accuracy
+LoRa Validation
+
+Measure:
+
+RSSI
+SNR
+Packet reception
+Packet loss
+Communication range
+Airflow Testing
+
+Compare sensor readings:
+
+Motors OFF
+     ↓
+Baseline
+     ↓
+Motors ON
+     ↓
+Compare
+     ↓
+Evaluate Propeller Effect
+Flight Testing
+
+Evaluate:
+
+Flight stability
+Battery endurance
+Payload effect
+Sensor boom placement
+Communication reliability
+⚠️ Important Sensor Limitation
+
+The current prototype uses low-cost MQ-series gas sensors.
+
+MQ-4 and MQ-135 readings should currently be treated as raw sensor/ADC readings unless the sensors have been properly calibrated and validated.
+
+They should not automatically be interpreted as:
+
+Certified methane concentration
+Certified AQI
+Regulatory environmental measurements
+
+Further calibration and validation are required for quantitative environmental claims.
+
+🔮 Future Scope
+🚁 Drone
+ Autonomous waypoint missions
+ Flight-controller integration
+ Battery telemetry
+ Mission planning
+ Multi-drone support
+🌡️ Sensors
+ Improved methane sensor
+ PM2.5 / PM10 sensing
+ CO / CO₂ sensing
+ Improved wind measurement
+ Sensor calibration
+📡 Communication
+ LoRa prototype
+ Wi-Fi ground station
+ Cloud connectivity
+ Real-time WebSocket communication
+🤖 AI
+ Real environmental training dataset
+ Pollution movement prediction
+ Spatial prediction
+ Time-series models
+ Model comparison
+ Model versioning
+🌐 Platform
+ Real-time dashboard
+ Pollution heatmap
+ Historical analytics
+ AI prediction visualization
+ Alert management
+ Automated environmental reports
+📈 Project Roadmap
+                 PROJECT ROADMAP
+
+
+        ┌─────────────────────────────┐
+        │  Phase 1                    │
+        │  Hardware Prototype         │
+        └─────────────┬───────────────┘
+                      ↓
+        ┌─────────────────────────────┐
+        │  Phase 2                    │
+        │  IoT + LoRa Communication   │
+        └─────────────┬───────────────┘
+                      ↓
+        ┌─────────────────────────────┐
+        │  Phase 3                    │
+        │  Web Monitoring Platform    │
+        └─────────────┬───────────────┘
+                      ↓
+        ┌─────────────────────────────┐
+        │  Phase 4                    │
+        │  Pollution Mapping          │
+        └─────────────┬───────────────┘
+                      ↓
+        ┌─────────────────────────────┐
+        │  Phase 5                    │
+        │  AI Prediction              │
+        └─────────────┬───────────────┘
+                      ↓
+        ┌─────────────────────────────┐
+        │  Phase 6                    │
+        │  Early Warning              │
+        └─────────────┬───────────────┘
+                      ↓
+        ┌─────────────────────────────┐
+        │  Future                     │
+        │  Smart-City Integration     │
+        └─────────────────────────────┘
+🛠️ Technology Stack
+<div align="center">
+Layer	Technology
+🚁 Drone	Quadcopter Platform
+🧠 Embedded	ESP32
+🌡️ Sensors	MQ-4, MQ-135, DHT22, BMP280
+📍 Navigation	GPS
+📡 Communication	LoRa
+🌐 Frontend	React / Web Technologies
+🗺️ Mapping	Geospatial Visualization
+🧠 AI	Machine Learning
+🗄️ Backend	API-based Architecture
+📊 Analytics	Environmental Data Visualization
+</div>
+🎯 Key Innovation
+
+The innovation of EID lies in combining multiple technologies into a single environmental intelligence workflow:
+
+🚁 Autonomous Mobility
+        +
+🌡️ Environmental Sensing
+        +
+📍 Geospatial Data
+        +
+📡 Long-Range IoT
+        +
+🗺️ Pollution Mapping
+        +
+🤖 Predictive AI
+        +
+⚠️ Early Warning
+        =
+🌍 Environmental Intelligence
+💭 Why EID?
+
+Fixed monitoring tells us what is happening at a point.
+
+EID is designed to help us understand what is happening across an area.
+
+The project moves environmental monitoring toward a more:
+
+Mobile → Spatial → Predictive → Proactive
+
+approach.
+
+🏆 Project Vision
+
+Our long-term vision is to develop a mobile environmental intelligence network where drones can collect spatial environmental data and transform it into actionable information for communities, researchers, industries, and authorities.
+
+Our vision:
+
+Make environmental monitoring mobile, intelligent, and proactive.
+
+👨‍💻 Team
+Team Nirvana
+
+Environmental Intelligence Drone
+
+Built for:
+
+🌍 Environmental Sustainability
+🤖 Artificial Intelligence
+🚁 Autonomous Systems
+📡 IoT
+🏙️ Smart Cities
