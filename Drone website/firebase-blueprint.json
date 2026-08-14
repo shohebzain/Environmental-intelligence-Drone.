@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profiles",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string" },
+        "lastLogin": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "user_activities": {
+      "title": "User Logged Activities & Incident Notes",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "action": { "type": "string" },
+        "details": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["userId", "action"]
+    },
+    "alert_resolutions": {
+      "title": "Alert Incident Resolutions",
+      "type": "object",
+      "properties": {
+        "alertId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "resolutionNote": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["alertId", "userId", "resolutionNote"]
+    }
+  }
+}

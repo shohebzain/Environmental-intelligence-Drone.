@@ -1,0 +1,6 @@
+{
+  "name": "Environmental Intelligence Drone",
+  "description": "AI-powered autonomous system for real-time pollution mapping, prediction, and early warning.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
