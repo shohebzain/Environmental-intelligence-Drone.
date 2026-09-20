@@ -1,6 +1,6 @@
 # EID Hardware Pinout
 
-## ESP32 Environmental Node
+## ESP32 Environmental Node 
 
 | Component | Signal | ESP32 Pin |
 |---|---|---:|
