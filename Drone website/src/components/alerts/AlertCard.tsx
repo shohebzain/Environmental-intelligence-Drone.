@@ -5,7 +5,7 @@ import { Eye, CheckCircle, CheckCircle2, ShieldCheck, FileText, X, AlertTriangle
 import { Link } from "react-router-dom";
 
 interface AlertCardProps {
-  alert: Alert;
+  alert: Alert; 
   onAcknowledge: (id: string) => Promise<void> | void;
   onResolve: (id: string, note: string, operator: string) => Promise<void> | void;
 }
